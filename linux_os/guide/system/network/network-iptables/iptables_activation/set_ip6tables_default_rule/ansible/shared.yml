@@ -1,0 +1,7 @@
+# platform = multi_platform_all
+
+- name: Modify /etc/sysconfig/ip6tables
+  replace:
+    path: /etc/sysconfig/ip6tables
+    regexp: '^:INPUT ACCEPT.*'
+    replace: ':INPUT DROP [0:0]'
